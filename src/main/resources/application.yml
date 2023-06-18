@@ -1,0 +1,22 @@
+debug: true
+spring:
+  sql:
+    init:
+      mode: always
+      data-locations: classpath:ddl.sql
+  jpa:
+    properties:
+      hibernate. dialect: org.hibernate.dialect.PostgreSQLDialect
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/library
+    username: postgres
+    password:
+  jackson:
+    deserialization:
+      READ_UNKNOWN_ENUM_VALUES_AS_NULL: true
+      ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT: true
