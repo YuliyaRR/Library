@@ -1,0 +1,805 @@
+{
+	"info": {
+		"_postman_id": "1fc6176a-578a-4926-8900-1fd1c0cad050",
+		"name": "library Docker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "book controller",
+			"item": [
+				{
+					"name": "create book",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Анна Каренина\",\r\n    \"author\": {\r\n        \"name\": \"Лев Толстой\"\r\n    },\r\n    \"publication_year\": 1877,\r\n    \"genre\": \"NOVEL\"    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/books/new",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"books",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create book 2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Приключения Тома Сойера\",\r\n    \"author\": {\r\n        \"name\": \"Марк Твен\"\r\n    },\r\n    \"publication_year\": 1876,\r\n    \"genre\": \"ADVENTURES\"    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/books/new",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"books",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create book 3",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Убийство в Восточном экспрессе\",\r\n    \"author\": {\r\n        \"name\": \"Агата Кристи\"\r\n    },\r\n    \"publication_year\": 1934,\r\n    \"genre\": \"DETECTIVE\"    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/books/new",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"books",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create book invalid",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"\",\r\n    \"author\": {\r\n        \"name\": \"\"\r\n    },\r\n    \"publication_year\": 2934,\r\n    \"genre\": \"DTECTIVE\"    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/books/new",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"books",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create book invalid 2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"\",\r\n    \"author\": {},\r\n    \"publication_year\": -15,\r\n    \"genre\": \"DTECTIVE\"    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/books/new",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"books",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get book by uuid",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "/*!в путь запроса необходимо вставить актуальный uuid из запрооса get all!*/",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/books/{uuid}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"books",
+								"{uuid}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get book by invalid uuid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/books/18129b53-60a2-4089-953f-0821d01b1f44",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"books",
+								"18129b53-60a2-4089-953f-0821d01b1f44"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update book",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"title\": \"Война и мир\",\r\n    \"author\": {\r\n        \"name\": \"Лев Толстой\"\r\n    },\r\n    \"genre\": \"NOVEL\",\r\n    \"publication_year\": 1865\r\n}\r\n\r\n/*!в путь запроса необходимо вставить актуальный uuid и версию из запрооса get all!*/",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/books/{uuid}/dt_update/{version}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"books",
+								"{uuid}",
+								"dt_update",
+								"{version}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update book invalid uuid and version",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Война и мир\",\r\n    \"author\": {\r\n        \"name\": \"Лев Толстой\"\r\n    },\r\n    \"genre\": \"POETRY\",\r\n    \"publication_year\": 1865\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/books/df95137b-9bd7-48be-82a4-6a54c2c07e3a/dt_update/1687024325341",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"books",
+								"df95137b-9bd7-48be-82a4-6a54c2c07e3a",
+								"dt_update",
+								"1687024325341"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update book invalid data not entered",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"title\": \"\",\r\n    \"author\": {\r\n        \"name\": \"\"\r\n    },\r\n    \"genre\": \"POERY\",\r\n    \"publication_year\": 11865\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/books/df95137b-9bd7-48be-82a4-6a54c2c07e3a/dt_update/1687024325341",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"books",
+								"df95137b-9bd7-48be-82a4-6a54c2c07e3a",
+								"dt_update",
+								"1687024325341"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete by uuid",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "/*!в путь запроса необходимо вставить актуальный uuid из запрооса get all!*/",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/books/{uuid}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"books",
+								"{uuid}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete by invalid uuid",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/books/4a4014c2-7012-4152-8160-add0007078fa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"books",
+								"4a4014c2-7012-4152-8160-add0007078fa"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "reader controller",
+			"item": [
+				{
+					"name": "create reader",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Иван Иванов\",\r\n    \"date_birth\": \"1999-12-25\",\r\n    \"address\": \"г.Солнечныйб ул.Полянка, 3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/readers/new",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"readers",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create reader 2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Петр Петров\",\r\n    \"date_birth\": \"2000-01-14\",\r\n    \"address\": \"г.Солнечный, ул.Лесная, 21\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/readers/new",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"readers",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create reader invalid",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"\",\r\n    \"date_birth\": \"2100-01-14\",\r\n    \"address\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/readers/new",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"readers",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/readers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"readers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get by uuid",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "/*!в путь запроса необходимо вставить актуальный uuid и из запрооса get all!*/",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/readers/{uuid}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"readers",
+								"{uuid}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get by uuid invalid uuid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/readers/709e676a-d07a-4ce8-b337-0ddbc147710b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"readers",
+								"709e676a-d07a-4ce8-b337-0ddbc147710b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update reader",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Иван Иванов\",\r\n    \"date_birth\": \"1999-12-25\",\r\n    \"address\": \"г.Солнечный, ул.Полянка, 3\"\r\n}\r\n\r\n/*!в путь запроса необходимо вставить актуальный uuid и версию из запрооса get all!*/",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/readers/{uuid}/dt_update/{version}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"readers",
+								"{uuid}",
+								"dt_update",
+								"{version}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update reader invalid uuid",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"uuid\": \"709e676a-d07a-4ce8-b337-0ddbc147710b\",\r\n    \"name\": \"Петр Петровочкин\",\r\n    \"address\": \"г.Солнечный, ул.Лесная, 20\",\r\n    \"date_birth\": \"2001-01-14\"    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/readers/709e676a-d07a-4ce8-b337-0ddbc147710b/dt_update/1687051437643",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"readers",
+								"709e676a-d07a-4ce8-b337-0ddbc147710b",
+								"dt_update",
+								"1687051437643"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update reader invalid data",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"\",\r\n    \"address\": \"\",\r\n    \"date_birth\": \"2100-01-14\"    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/readers/709e676a-d07a-4ce8-b337-0ddbc147710b/dt_update/1687051437643",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"readers",
+								"709e676a-d07a-4ce8-b337-0ddbc147710b",
+								"dt_update",
+								"1687051437643"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete by uuid",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "/*!в путь запроса необходимо вставить актуальный uuid из запрооса get all!*/",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/readers/{uuid}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"readers",
+								"{uuid}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete by invalid uuid",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/readers/709e676a-d07a-4ce8-b337-0ddbc147710b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"readers",
+								"709e676a-d07a-4ce8-b337-0ddbc147710b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "take book",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"uuid_reader\": \"bcf4ac1b-bc6a-4daa-a148-43a883c8db71\",\r\n    \"books\": [\r\n        {\r\n            \"uuid\": \"e3915e0d-6e19-45f4-85c4-d597eac20bec\"\r\n        },\r\n        {\r\n            \"uuid\": \"926d86a1-c416-438a-b492-9ff233ec56ce\"\r\n        }\r\n    ]        \r\n}\r\n\r\n/*!в Json необходимо вставить актуальный uuid читателя и книг из соответствующих запроосов get all!*/",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/readers/take",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"readers",
+								"take"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "take book invalid book uuid",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"uuid_reader\": \"6ab019c9-cc61-4b13-a660-729d0489b3c4\",\r\n    \"books\": [\r\n        {\r\n            \"uuid\": \"5d119adb-b33e-47db-8ac2-688984fb5043\"\r\n        },\r\n        {\r\n            \"uuid\": \"18111b53-60a2-4689-953f-0821d01b1f44\"\r\n        }\r\n    ]        \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/readers/take",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"readers",
+								"take"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "return book",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"uuid_reader\": \"bcf4ac1b-bc6a-4daa-a148-43a883c8db71\",\r\n    \"books\": [\r\n        {\r\n            \"uuid\": \"e3915e0d-6e19-45f4-85c4-d597eac20bec\"\r\n        },\r\n        {\r\n            \"uuid\": \"5dbf9adb-b33e-47db-8ac2-688984fb5043\"\r\n        }\r\n    ]        \r\n}\r\n\r\n/*!в Json необходимо вставить актуальный uuid читателя и книг из соответствующих запроосов get all!*/",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/readers/return",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"readers",
+								"return"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "return book invalid book uuid",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"uuid_reader\": \"6ab019c9-cc61-4b13-a660-729d0489b3c4\",\r\n    \"books\": [\r\n        {\r\n            \"uuid\": \"5d119adb-b33e-47db-8ac2-688984fb5043\"\r\n        },\r\n        {\r\n            \"uuid\": \"18111b53-60a2-4689-953f-0821d01b1f44\"\r\n        }\r\n    ]        \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/readers/return",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"readers",
+								"return"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
