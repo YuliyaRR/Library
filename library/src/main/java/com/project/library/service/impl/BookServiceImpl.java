@@ -54,7 +54,7 @@ public class BookServiceImpl implements IBookService {
     }
 
     @Override
-    public List<BookInfo> getAll() {//TODO разбивка на страницы
+    public List<BookInfo> getAll() {
         if (!conversionService.canConvert(BookEntity.class, BookInfo.class)) {
             throw new ConversionTimeException("Unable to convert", ErrorCode.ERROR);
         }

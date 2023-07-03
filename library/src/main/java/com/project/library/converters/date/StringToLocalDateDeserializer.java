@@ -17,7 +17,7 @@ public class StringToLocalDateDeserializer extends StdDeserializer<LocalDate> {
         super(vc);
     }
     @Override
-    public LocalDate deserialize(JsonParser p, DeserializationContext ctxt) throws IOException, JacksonException {
+    public LocalDate deserialize(JsonParser p, DeserializationContext ctxt) throws IOException{
 
         return LocalDate.parse(p.getText());
     }

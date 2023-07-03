@@ -30,7 +30,7 @@ public class BookController {
 
     @JsonView(View.OutBook.class)
     @GetMapping
-    public ResponseEntity<List<BookInfo>> getAll() {//TODO м/доб разбивку на страницы
+    public ResponseEntity<List<BookInfo>> getAll() {
         return new ResponseEntity<>(bookService.getAll(), HttpStatus.OK);
     }
 
