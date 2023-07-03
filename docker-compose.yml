@@ -1,0 +1,38 @@
+version: '3.9'
+services:
+
+  db_library:
+    build: postgresql
+    image: postgresql_library:1.0.0
+    restart: always
+    environment:
+      POSTGRES_USER: library
+      POSTGRES_PASSWORD: root
+    ports:
+      - "5432:5432"
+    networks:
+      - library_ntwrk
+
+  pgadmin:
+    build: pgAdmin
+    image: pgadmin_library:1.0.0
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: rom@rom.com
+      PGADMIN_DEFAULT_PASSWORD: 741258
+    ports:
+      - "82:80"
+    networks:
+      - library_ntwrk
+
+  library:
+    build: library
+    image: project_library:1.0.0
+    ports:
+      - "8081:8081"
+    networks:
+      - library_ntwrk
+
+networks:
+    library_ntwrk:
+      name: library_ntwrk
